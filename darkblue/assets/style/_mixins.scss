@@ -1,0 +1,29 @@
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin d_flex_se {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+@mixin vrtcllgn_m {
+  vertical-align: middle;
+  cursor: pointer;
+}
+@mixin d_none {
+  display: none;
+}
+@mixin d_flex_sb {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin d_flex_c {
+  display: flex;
+  justify-content: center;
+}
+@mixin d_flex_ai_b {
+  display: flex;
+  align-items: baseline;
+}

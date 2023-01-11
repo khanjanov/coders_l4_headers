@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./mixins";
+@import "./colors";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+.header {
+  &__container {
+    @include d_flex_se;
+    color: $base-color;
+    background-color: $brand-color;
+    padding: 10px;
+    & a {
+      color: $base-color;
+    }
+
+    & :first-child {
+      & span {
+        margin-right: 8px;
+      }
+    }
+    & span,
+    h6 {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.2px;
+      display: inline;
+    }
+    & img {
+      @include vrtcllgn_m;
+    }
+  }
+}
+.navbar {
+  padding: 0;
+  &__container {
+    width: 100%;
+    @include d_flex_se;
+    gap: 20px;
+    padding: 12px 0;
+    align-items: baseline;
+    &__picsformobile {
+      @include d_none;
+    }
+    &__listformobile {
+      @include d_none;
+    }
+    & h3 {
+      color: $brand-color;
+    }
+    & :nth-child(2) {
+      & a {
+        margin-right: 8px;
+      }
+    }
+    & a {
+      color: $base-color2;
+    }
+    & img {
+      @include vrtcllgn_m;
+    }
+    &__log {
+      & a {
+        color: $base-color3;
+      }
+    }
+  }
+}
+
+@include mobile {
+  * {
+    overflow-x: hidden;
+  }
+  .header {
+    @include d_none;
+  }
+  .navbar {
+    &__container {
+      & div:first-child {
+        @include d_flex_sb;
+        padding: 8px 20px;
+      }
+      &__picsformobile {
+        @include d_flex_ai_b;
+        & img {
+          width: 100%;
+          padding: 0 8px;
+        }
+      }
+      &__listformobile {
+        display: block;
+        font-size: 20px;
+        margin: 16px 0;
+        padding: 16px;
+      }
+      .forusinginmobile {
+        @include d_none;
+      }
+      &:first-child,
+      a,
+      img {
+        display: block;
+      }
+      & div:nth-child(2) {
+        & a {
+          margin-right: 0;
+          & img {
+            @include d_none;
+          }
+        }
+      }
+      & a {
+        text-align: center;
+        line-height: 48px;
+      }
+      &__log {
+        @include d_none;
+      }
+      & div:nth-child(5) {
+        @include d_none;
+      }
+    }
+    &__container2 {
+      @include d_flex_c;
+      & a {
+        padding-left: 0;
+      }
+    }
+  }
+}
